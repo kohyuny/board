@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table th:border="1">
+        <tr>
+            <td>글번호</td>
+            <td><span th:text="${articleDTO.id}"></span></td>
+        </tr>
+        <tr>
+            <td>작성날짜</td>
+            <td><span th:text="${articleDTO.regdate}"></span></td>
+        </tr>
+        <tr>
+            <td>수정날짜</td>
+            <td><span th:text="${articleDTO.moddate}"></span></td>
+        </tr>
+        <tr>
+            <td>조회수</td>
+            <td><span th:text="${articleDTO.cnt}"></span></td>
+        </tr>
+        <tr>
+            <td>작성자</td>
+            <td><span th:text="${articleDTO.userid}"></span></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td><span th:text="${articleDTO.title}"></span></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><span th:text="${articleDTO.content}"></span></td>
+        </tr>
+    </table>
+    <a th:href="@{|/edit/${articleDTO.id}|}">글수정</a>
+    <a th:href="@{|/delete/${articleDTO.id}|}">글삭제</a>
+
+</body>
+</html>

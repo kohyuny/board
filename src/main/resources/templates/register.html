@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<h1>글쓰기</h1>
+    <form th:action="@{/register}" th:method="post">
+        <table>
+            <tr>
+                <td>작성자</td>
+                <td><input name="userid"/></td>
+            </tr>
+            <tr>
+                <td>제목</td>
+                <td><input name="title"/></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td><textarea name="content"></textarea></td>
+            </tr>
+        </table>
+        <button th:value="submit">글쓰기</button>
+    </form>
+</body>
+</html>

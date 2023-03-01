@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <h1>list</h1>
+    <table th:border="1">
+        <tr>
+            <td>글번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>조회수</td>
+        </tr>
+        <th:block th:each="list: ${list}">
+        <tr>
+            <td><span th:text="${list.id}"></span></td>
+            <td><a th:href="@{|/detail/${list.id}|}"><span th:text="${list.title}"></span></a> </td>
+            <td><span th:text="${list.userid}"></span></td>
+            <td><span th:text="${list.cnt}"></span></td>
+        </tr>
+        </th:block>
+    </table>
+    <a th:href="@{/register}">글쓰기</a>
+</body>
+</html>

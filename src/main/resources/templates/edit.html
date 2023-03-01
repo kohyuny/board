@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/edit}" th:method="post">
+        <table>
+            <tr>
+                <td>글번호</td>
+                <td><input name="id" th:value="${articleDTO.id}" readonly/></td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td><input name="userid" th:value="${articleDTO.userid}" readonly/></td>
+            </tr>
+            <tr>
+                <td>제목</td>
+                <td><input name="title" th:value="${articleDTO.title}"/></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td><textarea name="content" th:text="${articleDTO.content}"></textarea></td>
+            </tr>
+        </table>
+        <button th:value="submit">글수정</button>
+    </form>
+</body>
+</html>
